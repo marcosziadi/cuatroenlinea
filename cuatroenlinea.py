@@ -32,3 +32,5 @@ for a in int(secuencia):
     soltarfichaencolumna(ficha, columna, tablero)
     for row in tablero:
         print(row)
+
+#Juan
