@@ -16,21 +16,31 @@ def soltarfichaencolumna(ficha, columna, tablero):
             tablero[row - 1][int(columna) - 1] = ficha
             return
 
+def tirovalido(columna):
+    if int(columna) > 7 or int(columna) < 1:
+        return False
+    else:
+        return True
+
 
 tablero = tablerovacio()
 for row in tablero:
        print(row)
-secuencia = 4
 
-for a in int(secuencia):
+secuencia = [0,1,2,3,4]
+
+for a in secuencia:
     if a % 2 == 0:
         ficha = 1
     else:
         ficha = 2
+
     columna = input("\nInsertar Numero de Columna: ")
 
-    soltarfichaencolumna(ficha, columna, tablero)
-    for row in tablero:
-        print(row)
-
-#Juan
+    if tirovalido(columna):
+        soltarfichaencolumna(ficha, columna, tablero)
+        for row in tablero:
+            print(row)
+    else:
+        print("Valor de Columna Inválido")
+        break
